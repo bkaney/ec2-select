@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ec2select}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Brian Kaney"]
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "VERSION",
      "bin/ec2-select",
      "bin/ec2select",
+     "ec2select.gemspec",
      "lib/ec2_select.rb",
      "test/ec2-select_test.rb",
      "test/test_helper.rb"
