@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+ 
+$:.unshift File.join(File.dirname(__FILE__), *%w[.. lib ])
+
+require 'ec2_select'
+include Ec2Select
+
+begin
+  response = Ec2Select.rewrite_or_show(ARGV.first)
+  puts response
+rescue
+  $stderr.puts "ERROR: #{$!}"
+end

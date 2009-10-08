@@ -1,0 +1,50 @@
+= ec2-select
+
+A little command line script to switch between multiple EC2 profiles.
+
+== Usage
+
+Add this line to your ~/.profile (or ~/.bashrc) or whatever
+
+  source ~/.ec2-select
+
+Then run the command:
+
+  $ ec2-select [profile]
+
+Where profile is the name of the EC2 profile you want to use.  If
+you run ec2-select without any arguments, the current profile is returned.
+
+You can set and environment EC2_PEMFILES to whatever you want.  This should
+be the path where you are going to store all your private key and cert files.
+
+The command writes a file ~/.ec2-select with the paths to the appropiate pem key
+and cert.
+
+
+== Profiles
+
+Profiles are defined by the names of your private key and cert from Amazon.  
+Each has to be named consistently.  For example:
+
+  $EC2_PEMFILES/floog-pk.pem
+  $EC2_PEMFILES/floog-cert.pem
+
+Would set EC2_PRIVATE_KEY to floog-pk.pem and EC2_CERT to floog-cert.pem when you run
+the following:
+
+  $ ec2-select floog
+
+== Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2009 Brian Kaney. See LICENSE for details.
