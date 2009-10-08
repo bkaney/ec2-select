@@ -6,8 +6,7 @@ A little command line script to switch between multiple EC2 profiles.
 
 Setup gemcutter as a source (http://gemcutter.org) and:
 
-  $ gem install ec2-select
-
+  $ gem install ec2select
 
 == Usage
 
