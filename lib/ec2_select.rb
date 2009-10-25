@@ -6,7 +6,7 @@ module Ec2Select
 
   def rewrite_or_show(profile=nil)
     return show if profile.nil?
-    rewrite(profile) and show unless profile.nil?
+    rewrite(profile) unless profile.nil?
   end
 
   def show
@@ -63,14 +63,15 @@ module Ec2Select
       $stderr.puts "Unknown shell `#{shell}'"
       exit 1
     end
-          
+    
+
     File.open(ECTWOS_FILE, 'w') {|f| f.write(content) }
 
-    "IMPORTANT!!! You need re-source if you want to use #{profile}" +
-    "in this terminal session!  This should do the trick:" +
+    "IMPORTANT!!! You need re-source if you want to use #{profile}\n" +
+    "in this terminal session!  This should do the trick:\n" +
     "\n  source #{ECTWOS_FILE}\n\n" +
-    "Any new terminal sessions will use this profile as long as you" +
-    "have 'source #{ECTWOS_FILE}' in your ~/.profile or" +
+    "Any new terminal sessions will use this profile as long as you\n" +
+    "have 'source #{ECTWOS_FILE}' in your ~/.profile or\n" +
     "~/.bashrc, ~/.bash_profile (or similar)."
   end
 
